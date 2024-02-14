@@ -108,8 +108,7 @@ class Game:
                 
                 # Obstacle collissions
                 if pygame.sprite.spritecollide(laser,self.blocks, True):
-                    # laser.kill()
-                    pass
+                    laser.kill()
                     
                 # Extra Collissions
                 if pygame.sprite.spritecollide(laser,self.extra, True):
@@ -121,7 +120,7 @@ class Game:
                 if aliens_hit:
                     for alien in aliens_hit:
                         self.score += alien.value
-                    # laser.kill()
+                    laser.kill()
                     self.explosion_sound.play()
                     
         # Alien lasers
